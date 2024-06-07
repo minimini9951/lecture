@@ -13,7 +13,7 @@ int main(void) {
 	{
 		plain_len = text_length(plain_text);
 
-		plain_content = make_space(plain_len);
+		plain_content = make_space((unsigned int)plain_len);
 
 		text_content(plain_len, plain_content, plain_text);
 	}
@@ -22,7 +22,7 @@ int main(void) {
 	{
 		key_len = text_length(key_text);
 
-		key_content = make_space(key_len);
+		key_content = make_space((unsigned int)key_len);
 
 		text_content(key_len, key_content, key_text);
 	}
@@ -32,15 +32,13 @@ int main(void) {
 	if (can_open(cipher_text))
 	{
 		char ch = 0;
-		while (ch = fgetc(plain_text) != EOF) {
-			fputs("%c", ch);
+		while ((ch = (char)fgetc(plain_text)) != EOF) {
+			fputs(&ch, cipher_text);
 		}
 	}
 
 	fclose(plain_text);
-	free(plain_content);
 	fclose(key_text);
-	free(key_content);
 #else
 	int cipher_len = 0;
 	char* cipher_content = 0;

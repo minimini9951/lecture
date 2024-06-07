@@ -1,6 +1,5 @@
 #ifndef Q_H
 #define Q_H
-#define ENCRYPT 0
 
 #define ASCII_COUNT 128
 
@@ -12,12 +11,12 @@ int can_open(FILE* file);
 
 int text_length(FILE* file);
 
-char* make_space(int length);
+char* make_space(unsigned int length);
 
 void text_content(int length, char* content, FILE* file);
 
 void encrypt(char* letter, char* keytext, int letter_length, int key_length);
 
-void decrypt(char* letter, char keytext);
+void decrypt(char* letter, char* keytext, int letter_length, int key_length);
 
 #endif // Q_H

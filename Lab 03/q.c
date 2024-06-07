@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "q.h"
 
 int can_open(FILE* file)
@@ -7,27 +8,31 @@ int can_open(FILE* file)
 		printf("Unable to open file plain.txt");
 		return 0;
 	}
+	else
+	{
+		return 1;
+	}
 }
 
 int text_length(FILE* file)
 {
 	char ch = 0;
 	int length = 0;
-	while ((ch = fgetc(file)) != EOF) {
+	while ((ch = (char)fgetc(file)) != EOF) {
 		length++;
 	}
 	return length;
 }
 
-char* make_space(int length)
+char* make_space(unsigned int length)
 {
-	(char*)malloc((length + 1) * sizeof(char));
+	return (char*)malloc((length + 1) * sizeof(char));
 }
 
 void text_content(int length, char* content, FILE* file)
 {
 	int value = 0;
-	while (value < length && (content[value] = fgetc(file)) != EOF)
+	while (value < length && (content[value] = (char)fgetc(file)) != EOF)
 	{
 		value++;
 	}
