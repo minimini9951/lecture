@@ -41,13 +41,15 @@ int main(void) {
 	fclose(key_text);
 #else
 	int cipher_len = 0;
+	int key_len = 0;
 	char* cipher_content = 0;
+	char* key_content = 0;
 	FILE* cipher_text = fopen("cipher.txt", "r");
 	if (can_open(cipher_text))
 	{
 		cipher_len = text_length(cipher_text);
 
-		cipher_content = make_space(cipher_len);
+		cipher_content = make_space((unsigned int)cipher_len);
 
 		text_content(cipher_len, cipher_content, cipher_text);
 	}
@@ -57,7 +59,7 @@ int main(void) {
 	{
 		key_len = text_length(key_text);
 
-		key_content = make_space(key_len);
+		key_content = make_space((unsigned int)key_len);
 
 		text_content(key_len, key_content, key_text);
 }
@@ -68,8 +70,8 @@ int main(void) {
 	if (can_open(out_plain_text))
 	{
 		char ch = 0;
-		while (ch = fgetc(cipher_text) != EOF) {
-			fputs("%c", ch);
+		while ((ch = (char)fgetc(cipher_text)) != EOF) {
+			fputs(&ch, out_plain_text);
 		}
 	}
 	// TODO5: write count of words into stderr
