@@ -1,0 +1,94 @@
+Allocating 35 bytes... done.
+The length of the path "/" is 1.
+Allocating 11 bytes... done.
+The length of the path "/" is 1.
+Searching for a string:
+	Text:     /
+	Sub-text: /
+	Result:   found 1 characters at a position 0.
+Searching for a string:
+	Text:     /
+	Sub-text: 20201031
+	Result:   not found
+Both strings are equal.
+Both strings are equal.
+Both strings are equal.
+Allocating 11 bytes... done.
+The length of the path "/" is 1.
+Searching for a string:
+	Text:     /
+	Sub-text: /
+	Result:   found 1 characters at a position 0.
+Searching for a string:
+	Text:     /
+	Sub-text: 20201201
+	Result:   not found
+Both strings are equal.
+Both strings are equal.
+Searching for a string:
+	Text:     /
+	Sub-text: /
+	Result:   found 1 characters at a position 0.
+Searching for a string:
+	Text:     /
+	Sub-text: /
+	Result:   found 1 characters at a position 0.
+Searching for a string:
+	Text:     /
+	Sub-text: 20201201
+	Result:   not found
+Searching for a string:
+	Text:     /
+	Sub-text: 20201031
+	Result:   not found
+Deallocated data.
+Deallocated data.
+Deallocated data.
+-------------------------------------------------------------------
+Allocating 37 bytes... done.
+The length of the path "cš\" is 5.
+Allocating 15 bytes... done.
+The length of the path "c-\ÌU" is 6.
+Searching for a string:
+	Text:     c-\ÌU
+	Sub-text: cš\
+	Result:   not found
+Searching for a string:
+	Text:     c-\ÌU
+	Sub-text: 20201031
+	Result:   not found
+Both strings are equal.
+Both strings are equal.
+Both strings are equal.
+Allocating 15 bytes... done.
+The length of the path "cš\" is 5.
+Searching for a string:
+	Text:     cš\
+	Sub-text: cš\
+	Result:   found 5 characters at a position 0.
+Searching for a string:
+	Text:     cš\
+	Sub-text: 20201201
+	Result:   not found
+Both strings are equal.
+Both strings are equal.
+Searching for a string:
+	Text:     c-\ÌU
+	Sub-text: cš\
+	Result:   not found
+Searching for a string:
+	Text:     cš\
+	Sub-text: c-\ÌU
+	Result:   not found
+Searching for a string:
+	Text:     c-\ÌU
+	Sub-text: 20201201
+	Result:   not found
+Searching for a string:
+	Text:     cš\
+	Sub-text: 20201031
+	Result:   not found
+Deallocated data.
+Deallocated data.
+Deallocated data.
+-------------------------------------------------------------------
