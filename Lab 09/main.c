@@ -4,8 +4,8 @@
 
 struct AABB aabb1;
 struct AABB aabb2;
-CP_Color color1;
-CP_Color color2;
+CP_Color random_color_1;
+CP_Color random_color_2;
 CP_Color red;
 
 // use CP_Engine_SetNextGameState to specify this function as the initialization function
@@ -13,8 +13,8 @@ CP_Color red;
 void game_init(void)
 {
 	// initialize variables and CProcessing settings for this gamestate
-	color1 = CP_Color_Create(CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), 255);
-	color2 = CP_Color_Create(CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), 255);
+	random_color_1 = CP_Color_Create(CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), 255);
+	random_color_2 = CP_Color_Create(CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), 255);
 	red = CP_Color_Create(255, 0, 0, 255);
 }
 
@@ -41,7 +41,7 @@ void game_update(void)
 	}
 	if (aabb1.count)
 	{
-		CP_Settings_Fill(color1);
+		CP_Settings_Fill(random_color_1);
 		CP_Graphics_DrawRect(aabb1.min.x, aabb1.min.y, aabb1.width, aabb1.height);
 	}
 	if (CP_Input_MouseTriggered(MOUSE_BUTTON_RIGHT))
@@ -60,7 +60,7 @@ void game_update(void)
 	}
 	if (aabb2.count)
 	{
-		CP_Settings_Fill(color2);
+		CP_Settings_Fill(random_color_2);
 		CP_Graphics_DrawRect(aabb2.min.x, aabb2.min.y, aabb2.width, aabb2.height);
 	}
 	if (aabb1.count && aabb2.count && CollisionIntersection_RectRect(&aabb1, &aabb2))
