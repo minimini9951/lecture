@@ -57,7 +57,7 @@ namespace hlp2
 	// <<
 	std::ostream& operator<<(std::ostream& os, const Point& obj);
 	// >>
-	std::ifstream& operator>>(std::ifstream& ifs, Point& obj);
+	std::istream& operator>>(std::istream& is, Point& obj);
 }
 
 #endif
